@@ -1,50 +1,41 @@
-# Welcome to your Expo app 👋
+# `useAnimatedProps` Is Not Testable
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This demo shows that it is not possible to test animations that use the
+`useAnimatedProps` hook. 
 
-## Get started
+1. [AnimatedLine](https://github.com/soulfresh/reanimated-test-animated-props/blob/main/components/AnimatedLine.tsx)
+   This component uses `react-native-svg` and `react-native-reanimated` to
+    animate the `strokeOffset` prop of an SVG Path element.
+2. [AnimatedLine-test](https://github.com/soulfresh/reanimated-test-animated-props/blob/main/components/__tests__/AnimatedLine-test.tsx)
+   This test demonstrates that the `strokeOffset` prop is never updated
+   even though the `useAnimatedProps` hook is receiving updated values
+   when the Jest timers run.
+
+## Run the tests
 
 1. Install dependencies
 
    ```bash
-   npm install
+   yarn install
    ```
 
-2. Start the app
+2. Run the tests
 
    ```bash
-    npx expo start
+    yarn test
    ```
 
-In the output, you'll find options to open the app in a
+## View the demo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+You can see that the SVG Path is indeed animating by running the demo.
+Run the command below and then look for the animating red line on the
+index page.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   ```bash
+    yarn web
+   ```
 
-## Get a fresh project
+## FYI
 
-When you're ready, run:
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
