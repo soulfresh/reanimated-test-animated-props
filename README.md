@@ -1,7 +1,7 @@
 # `useAnimatedProps` Is Not Testable
 
 This demo shows that it is not possible to test animations that use the
-`useAnimatedProps` hook. 
+`useAnimatedProps` hook. Ticket https://github.com/software-mansion/react-native-reanimated/issues/6414
 
 1. [AnimatedLine](https://github.com/soulfresh/reanimated-test-animated-props/blob/main/components/AnimatedLine.tsx)
    This component uses `react-native-svg` and `react-native-reanimated` to
